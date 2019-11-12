@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <ul id="nav">
+      <router-link to="/" tag="li" exact><a>Home</a></router-link> |
+      <router-link to="/about" tag="li"><a>About</a></router-link> |
+      <router-link to='/contact' tag="li" replace><a>Contact</a></router-link>
+    </ul>
     <router-view />
   </div>
 </template>
@@ -20,10 +21,15 @@
 #nav {
   padding: 30px;
 
-  a {
+  li {
     font-weight: bold;
-    color: #2c3e50;
+    color: #245280;
+    list-style: none;
+    display: inline-block;
 
+    a {
+      color: inherit;
+    }
     &.router-link-exact-active {
       color: #42b983;
     }
