@@ -20,8 +20,6 @@ export default {
 };
 </script>
 
-<style>
-h1 {
-  color: #01a799;
-}
-</style>
+<style lang="scss" scoped>
+
+</style>>

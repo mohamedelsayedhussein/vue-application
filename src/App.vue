@@ -20,6 +20,8 @@
 
 #nav {
   padding: 30px;
+  background: #c25f5f;
+  margin: 0;
 
   li {
     font-weight: bold;
