@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
+    {{msg}}
     <input v-focus class="form-control mt-3 w-50 mx-auto" type="text">
     <HelloWorld msg="Welcome to Your Vue.js App" />
     <HeaderComponent></HeaderComponent>
@@ -15,6 +16,11 @@ import HeaderComponent from '@/components/HeaderComponent.vue';
 
 export default {
   name: "home",
+  data: function () {
+    return {
+    msg: 'i am message',
+    }
+  },
   components: {
     HelloWorld: HelloWorld,
     HeaderComponent: HeaderComponent,
