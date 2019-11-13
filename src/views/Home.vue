@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
+    <input v-focus class="form-control mt-3 w-50 mx-auto" type="text">
     <HelloWorld msg="Welcome to Your Vue.js App" />
+    <HeaderComponent></HeaderComponent>
     <HeaderComponent />
   </div>
 </template>
@@ -16,6 +18,13 @@ export default {
   components: {
     HelloWorld: HelloWorld,
     HeaderComponent: HeaderComponent,
+  },
+  directives: {
+    focus:  {
+      inserted: function (el) {
+        el.focus()
+      }
+    }
   }
 };
 </script>

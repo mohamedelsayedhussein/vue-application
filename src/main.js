@@ -8,6 +8,16 @@ import "./scss/style.scss";
 import "../node_modules/normalize.css";
 
 import "./filters.js"; // global filter
+import "./directives"; //global custom directive
+
+Vue.directive("font", {
+  bind: function(el, binding) {
+    el.style.fontSize = binding.value + "px";
+    if (binding.modifiers.bold) {
+      el.style.fontWeight = "bold";
+    }
+  }
+});
 
 Vue.config.productionTip = false;
 

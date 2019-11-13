@@ -1,10 +1,10 @@
 <template>
     <div class="col-lg-4 col-sm-6 json-post-box p-0 my-1 text-left">
         <div class="post-wrap bg-light p-3 h-100">
-            <span class="views">{{views}}</span>
+            <span v-color class="views">{{views}}</span>
             <br>
-            <h2 class="title text-primary">{{title | reverseFilter | upercase}}</h2>
-            <span class="date">{{date}}</span>
+            <h2 v-font.bold='10' class="title text-primary">{{title | reverseFilter | upercase}}</h2>
+            <span v-bg class="date p-2">{{date}}</span>
             <br>
             <img :src="avatar" alt="" class="avatar">
             <h5 class="category">{{category}}</h5>
@@ -22,6 +22,13 @@ export default {
         reverseFilter :  function(v) {
         return v.split("").reverse().join("")
         }
+    },
+    directives: {
+        color: {
+            bind: function(el) {
+                el.style.color = "orange"
+            }
+        }
     }
 }
 </script>
@@ -35,7 +42,7 @@ p {
 h2,h5,
 h4 {
     color: #0687d1;
-    font-size: 1rem;
+    // font-size: 1rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
