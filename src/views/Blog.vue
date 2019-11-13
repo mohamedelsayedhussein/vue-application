@@ -1,7 +1,7 @@
 <template>
     <div class="blog-area">
         <div class="container">
-            <div class="row">
+            <div class="row mt-5">
                 <JsonBlog v-for="post in posts" :key="post.id"
                 :views="post.views"
                 :date="post.date"
@@ -32,3 +32,7 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+
+</style>
