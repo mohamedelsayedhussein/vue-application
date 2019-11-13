@@ -3,7 +3,7 @@
         <div class="post-wrap bg-light p-3 h-100">
             <span class="views">{{views}}</span>
             <br>
-            <h2 class="title text-primary">{{title}}</h2>
+            <h2 class="title text-primary">{{title | reverseFilter | upercase}}</h2>
             <span class="date">{{date}}</span>
             <br>
             <img :src="avatar" alt="" class="avatar">
@@ -18,6 +18,11 @@
 export default {
     name: "jsonblog",
     props: ["views","date","category","title","avatar","content","author"],
+    filters: {
+        reverseFilter :  function(v) {
+        return v.split("").reverse().join("")
+        }
+    }
 }
 </script>
 
