@@ -1,15 +1,8 @@
 <template>
     <div class="blog-area">
         <div class="container">
-            <div class="row mt-5">
-                <JsonBlog v-for="post in posts" :key="post.id"
-                :views="post.views"
-                :date="post.date"
-                :title="post.title"
-                :category="post.category"
-                :content="post.content"
-                :avatar="post.avatar"
-                :author="post.author"/>
+            <div class="row mt-5 " v-if="posts">
+                <JsonBlog v-for="post in posts" :key="post.id" :ourBlog="post"/>
             </div>
         </div>
     </div>
