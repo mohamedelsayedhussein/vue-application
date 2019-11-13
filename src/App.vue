@@ -3,7 +3,8 @@
     <ul id="nav">
       <router-link to="/" tag="li" exact><a>Home</a></router-link> |
       <router-link to="/about" tag="li"><a>About</a></router-link> |
-      <router-link to='/contact' tag="li" replace><a>Contact</a></router-link>
+      <router-link to='/contact' tag="li" replace><a>Contact</a></router-link> |
+      <router-link to="/blog" tag="li"><a>Blog</a></router-link>
     </ul>
     <router-view />
   </div>
