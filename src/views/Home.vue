@@ -4,9 +4,10 @@
     <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
     {{msg}}
     <input v-focus class="form-control mt-3 w-50 mx-auto" type="text">
-    <HelloWorld msg="Welcome to Your Vue.js App" v-for="anyThing in 5" :key="anyThing.textContent"></HelloWorld>
+    <hello-world msg="Welcome to Your Vue.js App" v-for="anyThing in 5" :key="anyThing.textContent"></hello-world>
     <!-- <HeaderComponent></HeaderComponent> -->
     <!-- <HeaderComponent /> -->
+    <!-- <header-component></header-component> -->
   </div>
 </template>
 
@@ -23,8 +24,10 @@ export default {
     }
   },
   components: {
-    HelloWorld: HelloWorld,
+    // HelloWorld
+    "hello-world" : HelloWorld,
     // HeaderComponent: HeaderComponent,
+    // 'header-component' : HeaderComponent
   },
   directives: {
     focus:  {
