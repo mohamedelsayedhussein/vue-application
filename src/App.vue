@@ -4,6 +4,7 @@
   </div>
 </template>
 
+// this is the root component
 
 <script>
 import Header from "./components/Header.vue";
