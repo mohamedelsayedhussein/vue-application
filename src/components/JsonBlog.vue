@@ -12,6 +12,7 @@
             <h4 class="author">{{ourBlog.author}}</h4>
             <p> {{childName}} </p>
             <button @click="changeName">change</button>
+            <button @click="newFN">click</button>
         </div>
     </div>
 </template>
@@ -31,13 +32,13 @@ export default {
         },
         childName: {
             type: String
+        },
+        newFN: {
+            type: Function
         }
         // validated props
-    },
-    data: function() {
-        return {
-            newData: "data from child to parent using custom event"
-        }
+        /* note: you can use props inside child like normal property .. 
+         you can access it with this.props and you can call it inside mustache syntax like normal property*/
     },
     methods: {
         changeName: function() {
