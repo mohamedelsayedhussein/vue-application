@@ -30,6 +30,7 @@ export default {
     // HeaderComponent: HeaderComponent,
     // 'header-component' : HeaderComponent
     // note : this is key value pairs
+    // note : you can write key with dash and double quotation mark or camelcase or kababcase because js is case sensetive
   },
   directives: {
     focus:  {
