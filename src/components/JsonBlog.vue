@@ -10,6 +10,8 @@
             <h5 class="category">{{ourBlog.category}}</h5>
             <p class="content">{{ourBlog.content}}</p>
             <h4 class="author">{{ourBlog.author}}</h4>
+            <p> {{childName}} </p>
+            <button @click="changeName">change</button>
         </div>
     </div>
 </template>
@@ -26,8 +28,22 @@ export default {
             required: true,//this component may only used if this property is passed
             // default: "", does not declared if required is true (override required)
             type: Object
+        },
+        childName: {
+            type: String
         }
         // validated props
+    },
+    data: function() {
+        return {
+            newData: "data from child to parent using custom event"
+        }
+    },
+    methods: {
+        changeName: function() {
+            this.childName = "child name";
+            this.$emit('emitEvent', this.childName)
+        }
     },
     filters: {
         reverseFilter :  function(v) {
@@ -46,7 +62,7 @@ export default {
 
 <style lang="scss" scoped>
 p {
-    font-size: .5rem;
+    font-size: .6rem;
     width: 80%;
     line-height: 1;
 }
