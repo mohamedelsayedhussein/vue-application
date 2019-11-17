@@ -17,10 +17,17 @@
 <script>
 export default {
     name: "jsonblog",
+    // props: ["ourBlog"], unvalidated props
+    // props: {
+    //     ourBlog : Object
+    // },
     props: {
         ourBlog: {
-            required: true,
+            required: true,//this component may only used if this property is passed
+            // default: "", does not declared if required is true (override required)
+            type: Object
         }
+        // validated props
     },
     filters: {
         reverseFilter :  function(v) {

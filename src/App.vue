@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <Header />
+  <div id="root-component">
+    <header-component />
   </div>
 </template>
 
@@ -9,14 +9,14 @@
 <script>
 import Header from "./components/Header.vue";
 export default {
-  name: "app",
+  name: "root-component",
   components: {
-    Header
+    "header-component":Header
   }
 };
 </script>
 <style lang="scss">
-#app {
+#root-component {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

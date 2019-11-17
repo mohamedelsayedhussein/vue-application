@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row mt-5 " v-if="posts">
                 <JsonBlog v-for="post in posts" :key="post.id" :ourBlog="post"/>
-                <JsonBlog v-for="(post, index) in posts" :key="index" :ourBlog="post"/>
+                <!-- <JsonBlog v-for="(post, index) in posts" :key="index" :ourBlog="post"/> -->
             </div>
         </div>
     </div>
