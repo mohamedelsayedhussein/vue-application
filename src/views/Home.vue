@@ -25,9 +25,11 @@ export default {
   },
   components: {
     // HelloWorld
+    // note : key value pairs in ES6 is just define value without key like first one (HelloWorld)
     "hello-world" : HelloWorld,
     // HeaderComponent: HeaderComponent,
     // 'header-component' : HeaderComponent
+    // note : this is key value pairs
   },
   directives: {
     focus:  {
