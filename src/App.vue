@@ -6,6 +6,8 @@
 
 // this is the root component
 
+// any component have to contain template mandatory and script is optional but if you declare <script></script> you must add export default{} untill doesn't show any error in yotr inspect
+
 <script>
 import Header from "./components/Header.vue";
 export default {
