@@ -3,15 +3,18 @@
         <ul id="nav">
             <router-link to="/" tag="li" exact><a>Home</a></router-link> |
             <router-link to='/contact' tag="li"><a>Contact</a></router-link> |
-            <router-link to="/blog" tag="li" replace><a>Blog</a></router-link>
+            <router-link to="/blogs/1" tag="li"><a>Blog 1</a></router-link> |
+            <router-link to="/blogs/2" tag="li" replace><a>Blog 2</a></router-link>
         </ul>
-        <router-view />
     </div>
 </template>
+    
+//  exact attribute remove active class from home btn when we click to another component and tell to home component take the active class when your path exactly / and only / not /anotherComponent
 
 <script>
 export default {
     name : 'header-component',
+    
 };
 
 </script>

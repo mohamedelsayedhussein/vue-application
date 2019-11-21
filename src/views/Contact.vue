@@ -8,11 +8,19 @@
                 <img src="https:/placehold.it/400x400" alt="">
             </div>
         </div>
+        <button @click="goHome">Go Home</button>
     </div>
 </template>
 
 <script>
 export default {
     name: 'contact',
+
+    methods: {
+        goHome: function() {
+            this.$router.push('/');
+            // push path to router object
+        }
+    }
 }
 </script>
