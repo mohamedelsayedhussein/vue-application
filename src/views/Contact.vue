@@ -21,6 +21,15 @@ export default {
             this.$router.push('/');
             // push path to router object
         }
+    },
+    beforeRouteEnter: function(to, from, next) {
+        console.log('route guard before : beforeRouteEnter')
+        next()
+    },
+    beforeRouteLeave: function (to, from, next) {
+        if(confirm('Sure?')) {
+            next()
+        }
     }
 }
 </script>

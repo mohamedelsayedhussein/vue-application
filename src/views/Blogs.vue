@@ -1,10 +1,13 @@
 <template>
     <div class="blog-area">
-        <!-- {{ id }} -->
+        <h1>BLOGS</h1>
+        <router-link to="/blogs/blog1">blog 1</router-link> |
+        <router-link to="/blogs/blog2">blog 2</router-link>
+        
         <div class="container">
             <div class="row mt-5 " v-if="posts">
                 <JsonBlog @emitEvent="name = $event" :newFN="changeName" :childName="name" v-for="post in posts" :key="post.id" :ourBlog="post"/>
-                <!-- <JsonBlog v-for="(post, index) in posts" :key="index" :ourBlog="post"/> -->
+                <!-- <JsonBlog @emitEvent="name = $event" :newFN="changeName" :childName="name" v-for="(post, index) in posts" :key="index" :ourBlog="post"/> -->
             </div>
         </div>
         <p class="text-white my-5"> {{ name }} </p>
@@ -23,15 +26,9 @@ export default {
             posts: JsonPosts,
             name: "parent name",
             newName: "parent data turn to child",
-            // id: this.$route.params.id,
+            
         }
     },
-    // watch: {
-    //     '$route'(to, from) {
-    //         this.id = to.params.id
-    //     }
-    // },
-    // props: ['id'],
     methods: {
         changeName: function() {
             this.name = "new name"

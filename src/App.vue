@@ -1,5 +1,5 @@
 <template>
-  <div id="root-component">
+  <div class="text-primary" id="root-component">
     <header-component />
     <router-view />
   </div>
@@ -7,7 +7,7 @@
 
 // note: all your comments must be outside the template .. if not yuor comment will be shown in the browser
 
-// <router-view /> is  builtin component tell to router please load the components routes in this place 
+// <router-view /> is  builtin component tell to Vue-router please load the components routes in this place and show them
 
 // this is the root component
 
