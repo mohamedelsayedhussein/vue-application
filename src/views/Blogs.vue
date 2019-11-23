@@ -6,11 +6,14 @@
         
         <div class="container">
             <div class="row mt-5 " v-if="posts">
-                <JsonBlog @emitEvent="name = $event" :newFN="changeName" :childName="name" v-for="post in posts" :key="post.id" :ourBlog="post"/>
+                <JsonBlog @emitEvent="name = $event"  v-for="post in posts" v-bind="{ourBlog:post,childName:name,newFN:changeName}" :key="post.id" />
+                <!-- لما نعمل بايند لاكتر من خاصيه يفضل نعملهم جوه اوبجكت كما موضح بالاعلى -->
                 <!-- <JsonBlog @emitEvent="name = $event" :newFN="changeName" :childName="name" v-for="(post, index) in posts" :key="index" :ourBlog="post"/> -->
             </div>
         </div>
         <p class="text-white my-5"> {{ name }} </p>
+        <button @click="increment">increment</button>
+        <button @click="decrement">decrement</button>
     </div>
 </template>
 
@@ -18,6 +21,7 @@
 
 import JsonBlog from "@/components/JsonBlog.vue";
 import JsonPosts from "../json/post.json";
+import { mapMutations } from "vuex";    
 
 export default {
     name: "blogs",
@@ -32,7 +36,16 @@ export default {
     methods: {
         changeName: function() {
             this.name = "new name"
-        }
+        },
+        ...mapMutations(['increment', 'decrement']),
+        // iData() {
+        //     // this.$store.state.stateProperty++;
+        //     this.$store.commit('increment')
+        // },
+        // dData() {
+        //     // this.$store.state.stateProperty--;
+        //     this.$store.commit('decrement')
+        // }
     },
     components: {
         JsonBlog

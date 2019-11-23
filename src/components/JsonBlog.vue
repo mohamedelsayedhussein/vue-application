@@ -1,6 +1,8 @@
 <template>
     <div class="col-lg-4 col-sm-6 json-post-box p-0 my-1 text-left">
         <div class="post-wrap bg-light p-3 h-100">
+            {{ doubleStateProperty }}<br>
+            {{ secondGetters }}<br>
             <span v-color class="views">{{ourBlog.views}}</span>
             <br>
             <h2 v-font.bold='10' class="title text-primary">{{ourBlog.title | reverseFilter | upercase}}</h2>
@@ -18,6 +20,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
     name: "jsonblog",
     // props: ["ourBlog"], unvalidated props
@@ -45,6 +48,16 @@ export default {
             this.childName = "child name";
             this.$emit('emitEvent', this.childName)
         }
+    },
+    computed: {
+        ...mapGetters(['doubleStateProperty', 'secondGetters']),
+        // dataFromStore: function() {
+        //     // return this.$store.state.stateProperty
+        //     return this.$store.getters.doubleStateProperty;
+        // },
+        // anotherDataFromStore: function() {
+        //     return this.$store.getters.secondGetters;
+        // }
     },
     filters: {
         reverseFilter :  function(v) {
