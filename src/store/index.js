@@ -32,7 +32,18 @@ export default new Vuex.Store({
       state.counter -= payload.amount;
     }
   },
-  actions: {},
+  actions: {
+    // asynchronousAction: function({ commit }) {
+    //   setTimeout(function() {
+    //     commit("increment");
+    //   }, 3000);
+    // }
+    asynchronousAction: function(context) {
+      setTimeout(function() {
+        context.commit("increment");
+      }, 3000);
+    }
+  },
   modules: {}
 });
 
@@ -60,3 +71,9 @@ export default new Vuex.Store({
 
 //===================== actions  ==================
 //  all Mutations is run synchronously
+
+
+// synchronous | متزامن
+// asynchronous | غير متزامن
+// make sense | منطقى
+// manipulate | تلاعب

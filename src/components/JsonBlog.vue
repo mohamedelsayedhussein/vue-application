@@ -17,6 +17,7 @@
             <button @click="newFN">click</button>
             <button @click="increment">counter++ </button>
             <button @click="decrement({amount:3})">counter-- </button>
+            <button @click="asynchronousIncrement">asynchronous counter-- </button>
         </div>
     </div>
 </template>
@@ -60,7 +61,10 @@ export default {
             // this.$store.state.counter--; //wrong way to edit state
             // this.$store.commit('decrement', 4)
             // this.$store.commit('decrement', {amount:4})
-        // }
+        // },
+        asynchronousIncrement: function() {
+            this.$store.dispatch('asynchronousAction')
+        }
     },
     computed: {
         ...mapGetters(['doubleStateProperty', 'secondGetters']),
