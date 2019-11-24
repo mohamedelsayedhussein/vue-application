@@ -3,7 +3,7 @@
         <h1>BLOGS</h1>
         <router-link to="/blogs/blog1">blog 1</router-link> |
         <router-link to="/blogs/blog2">blog 2</router-link>
-        
+        <p> {{computedFromStore}} </p>
         <div class="container">
             <div class="row mt-5 " v-if="posts">
                 <JsonBlog @emitEvent="name = $event"  v-for="post in posts" v-bind="{ourBlog:post,childName:name,newFN:changeName}" :key="post.id" />
@@ -31,6 +31,11 @@ export default {
             name: "parent name",
             newName: "parent data turn to child",
             
+        }
+    },
+    computed: {
+        computedFromStore() {
+            return this.$store.state.counter
         }
     },
     methods: {

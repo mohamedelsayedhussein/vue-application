@@ -5,22 +5,31 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    stateProperty: 0
+    stateProperty: 5,
+    counter: 0
   },
   getters: {
     doubleStateProperty: function(state) {
       return state.stateProperty * 5;
     },
     secondGetters: function(state) {
-      return state.stateProperty * 2;
+      return function(x) {
+        return state.stateProperty * x;
+      };
+    },
+    trippleCounter(state) {
+      return state.counter * 3 + 5;
     }
   },
   mutations: {
     increment: function(state) {
-      state.stateProperty++;
+      state.counter++;
     },
-    decrement: function(state) {
-      state.stateProperty--;
+    // decrement(state, x) {
+    //   state.counter -= x;
+    // },
+    decrement(state, payload) {
+      state.counter -= payload.amount;
     }
   },
   actions: {},

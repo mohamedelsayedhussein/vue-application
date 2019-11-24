@@ -2,7 +2,7 @@
     <div class="col-lg-4 col-sm-6 json-post-box p-0 my-1 text-left">
         <div class="post-wrap bg-light p-3 h-100">
             {{ doubleStateProperty }}<br>
-            {{ secondGetters }}<br>
+            {{ secondGetters(3) }}<br>
             <span v-color class="views">{{ourBlog.views}}</span>
             <br>
             <h2 v-font.bold='10' class="title text-primary">{{ourBlog.title | reverseFilter | upercase}}</h2>
@@ -15,12 +15,15 @@
             <p> {{childName}} </p>
             <button @click="changeName">change</button>
             <button @click="newFN">click</button>
+            <button @click="increment">counter++ </button>
+            <button @click="decrement({amount:3})">counter-- </button>
         </div>
     </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
+
 export default {
     name: "jsonblog",
     // props: ["ourBlog"], unvalidated props
@@ -47,17 +50,30 @@ export default {
         changeName: function() {
             this.childName = "child name";
             this.$emit('emitEvent', this.childName)
-        }
+        },
+        ...mapMutations(['increment', 'decrement']),
+        // increase() {
+            // this.$store.state.counter++; //wrong way to edit state
+            // this.$store.commit('increment')
+        // },
+        // decrease() {
+            // this.$store.state.counter--; //wrong way to edit state
+            // this.$store.commit('decrement', 4)
+            // this.$store.commit('decrement', {amount:4})
+        // }
     },
     computed: {
         ...mapGetters(['doubleStateProperty', 'secondGetters']),
         // dataFromStore: function() {
-        //     // return this.$store.state.stateProperty
-        //     return this.$store.getters.doubleStateProperty;
+            // return this.$store.state.stateProperty
+            // return this.$store.getters.doubleStateProperty;
         // },
         // anotherDataFromStore: function() {
-        //     return this.$store.getters.secondGetters;
-        // }
+            // return this.$store.getters.secondGetters(2);
+        // },
+        computedFromStore() {
+            return this.$store.state.counter
+        }
     },
     filters: {
         reverseFilter :  function(v) {

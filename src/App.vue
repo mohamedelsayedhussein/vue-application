@@ -1,6 +1,10 @@
 <template>
   <div class="text-primary" id="root-component">
     <header-component />
+    {{computedFromStoreToRoot}}
+    <br>
+    <!-- {{ gettersFromStore }} -->
+    {{ trippleCounter }}
     <router-view />
   </div>
 </template>
@@ -15,10 +19,21 @@
 
 <script>
 import Header from "./components/Header.vue";
+import { mapGetters} from "vuex";
+
 export default {
   name: "root-component",
   components: {
     "header-component":Header
+  },
+  computed: {
+    ...mapGetters(['trippleCounter']),
+    computedFromStoreToRoot() {
+      return this.$store.state.counter
+    },
+    // gettersFromStore() {
+    //   return this.$store.getters.trippleCounter;
+    // }
   }
 };
 </script>
