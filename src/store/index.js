@@ -1,15 +1,21 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import likesModule from "./likesModule";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
     stateProperty: 5,
-    counter: 0
+    counter: 0,
+    nameSpacedRoot: 1
   },
   getters: {
+    sameGetter(state) {
+      return state.nameSpacedRoot;
+    },
     doubleStateProperty: function(state) {
+      console.log(state.firstModule.liked);
       return state.stateProperty * 5;
     },
     secondGetters: function(state) {
@@ -44,7 +50,9 @@ export default new Vuex.Store({
       }, 3000);
     }
   },
-  modules: {}
+  modules: {
+    firstModule: likesModule
+  }
 });
 
 // vuex (centralized store)

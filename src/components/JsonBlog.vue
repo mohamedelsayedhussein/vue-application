@@ -17,13 +17,15 @@
             <button @click="newFN">click</button>
             <button @click="increment">counter++ </button>
             <button @click="decrement({amount:3})">counter-- </button>
-            <button @click="asynchronousIncrement">asynchronous counter-- </button>
+            <button @click="asynchronousAction">asynchronous counter-- </button>
+            <like class="mt-5"/>
         </div>
     </div>
 </template>
 
 <script>
-import { mapGetters, mapMutations } from "vuex";
+import { mapGetters, mapMutations, mapActions } from "vuex";
+import like from "./like";
 
 export default {
     name: "jsonblog",
@@ -62,9 +64,10 @@ export default {
             // this.$store.commit('decrement', 4)
             // this.$store.commit('decrement', {amount:4})
         // },
-        asynchronousIncrement: function() {
-            this.$store.dispatch('asynchronousAction')
-        }
+        ...mapActions(['asynchronousAction']),
+        // asynchronousIncrement: function() {
+        //     this.$store.dispatch('asynchronousAction')
+        // }
     },
     computed: {
         ...mapGetters(['doubleStateProperty', 'secondGetters']),
@@ -90,6 +93,9 @@ export default {
                 el.style.color = "orange"
             }
         }
+    },
+    components: {
+        like
     }
 }
 </script>
