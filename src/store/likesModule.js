@@ -38,7 +38,7 @@ const likesModule = {
         } else {
           context.commit("decreaseLikes");
         }
-      }, 1000);
+      }, 500);
     }
   }
 };

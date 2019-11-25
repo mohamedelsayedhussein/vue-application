@@ -5,7 +5,13 @@
             <button v-if="!liked" @click="actionToggle" class="btn btn-primary"><i class='fa fa-thumbs-o-down'></i> dislike</button>
         </div>
         <br>
-        <p>likes is : {{ likes }} </p>
+        <transition name="fade">
+            <p v-show="liked">likes is : {{ likes }} </p>
+        </transition>
+        <transition name="slide" appear>
+            <p v-show="liked">likes is : {{ likes }} </p>
+        </transition>
+
         <p>namespaced is : {{ sameGetter }} </p>
     </div>
 </template>
@@ -21,3 +27,39 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.fade-enter {
+    opacity: 0;
+}
+.fade-enter-active {
+    transition: opacity 1s;
+}
+.fade-leave {
+
+}
+.fade-leave-active {
+    transition: opacity 1s;
+    opacity: 0;
+}
+.fade-enter {
+
+}
+.fade-enter-active {
+    animation: fade-in .3s ease forwards;
+}
+.fade-leave {
+
+}
+.fade-leave-active {
+    animation: fade-out .3s ease forwards;
+}
+@keyframes fade-in {
+    from{transform: translateY(-20px)}
+    to{transform: translateY(0)}
+}
+@keyframes fade-out {
+    from{transform: translateY(0)}
+    to{transform: translateY(-20px)}
+}
+</style>
