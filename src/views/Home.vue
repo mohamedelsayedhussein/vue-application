@@ -13,6 +13,7 @@
 
 <script>
 // @ is an alias to /src
+// نستخدم @ عشان لو غيرنا مكان الفايل منحتجش نغير الباث
 // import HeaderComponent from '@/components/HeaderComponent.vue';
 
 export default {

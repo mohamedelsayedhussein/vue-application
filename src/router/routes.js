@@ -50,7 +50,7 @@ export default [
     name: "users",
     component: Users,
     children: [
-      // we use nested routes to use <router-view> in many places to show route component (children) inside another route component (users) in the same page 
+      // we use nested routes to use <router-view> in many places to show route component (children) inside another route component (users) in the same page
       // ,,, again ,, children and parent components rendered in one page using nested routes
       { path: "", component: UsersHome },
       { path: ":myUser", component: UsersView, props: true }
