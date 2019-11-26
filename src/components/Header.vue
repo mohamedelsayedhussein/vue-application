@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+$color: #42b983;
 #nav {
   padding: 30px;
   background: #c25f5f;
@@ -42,7 +42,7 @@ export default {
       color: inherit;
     }
     &.router-link-exact-active {
-      color: #42b983;
+      color: $color;
     }
   }
 }
