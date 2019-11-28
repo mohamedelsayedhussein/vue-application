@@ -18,7 +18,8 @@ const likesModule = {
     }
   },
   mutations: {
-    toggleLiked(state) {
+    toggleLiked(state, commit, rootstate) {
+      console.log(rootstate.counter);
       state.liked = !state.liked;
     },
     increaseLikes: function(state) {
