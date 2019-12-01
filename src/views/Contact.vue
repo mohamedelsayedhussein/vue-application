@@ -1,11 +1,12 @@
 <template>
     <div class="container">
+        <test />
         <div class="row mt-5 align-items-center">
             <div class="col-md-6">
-                <h3 class="text-white">welcome from contact view</h3>
+                <h3 v-scrollAnimated class="text-white">welcome from contact view</h3>
             </div>
             <div class="col-md-6">
-                <img src="https:/placehold.it/400x400" alt="">
+                <img v-scrollAnimated src="https:/placehold.it/400x400" alt="">
             </div>
         </div>
         <button @click="goHome">Go Home</button>
@@ -13,9 +14,12 @@
 </template>
 
 <script>
+import Test from "../components/Test"
 export default {
     name: 'contact',
-
+    components: {
+        Test
+    },
     methods: {
         goHome: function() {
             this.$router.push('/');
@@ -33,3 +37,22 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+h3 {
+    transition-delay: .1s !important;
+}
+img {
+    display: block;
+    transition-delay: .2s !important;
+}
+.before-enter {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all .2s linear;
+}
+.enter {
+    opacity: 1;
+    transform: translateY(0)
+}
+</style>
