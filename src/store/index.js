@@ -80,8 +80,8 @@ export default new Vuex.Store({
 //===================== actions  ==================
 //  all Mutations is run synchronously
 
-
 // synchronous | متزامن
 // asynchronous | غير متزامن
 // make sense | منطقى
 // manipulate | تلاعب
+// dummy | نموذج مزيف
