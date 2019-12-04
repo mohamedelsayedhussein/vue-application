@@ -1,6 +1,7 @@
 <template>
   <div class="text-primary" id="root-component">
     <header-component />
+    <!-- header component is global component so we will not import it and we will not register it inside components object -->
     {{computedFromStoreToRoot}}
     <br>
     <!-- {{ gettersFromStore }} -->
@@ -25,7 +26,7 @@
 // any component have to contain template mandatory and script is optional but if you declare <script></script> you must add export default{} untill doesn't show any errors in your inspect
 
 <script>
-import Header from "./components/Header.vue";
+// import Header from "./components/Header.vue";
 import Profile from "./components/AppProfile.vue";
 import { mapGetters} from "vuex";
 import axios from "axios";
@@ -40,7 +41,7 @@ export default {
     }
   },
   components: {
-    "header-component":Header,
+    // "header-component":Header,
     "app-profile": Profile
   },
   computed: {
