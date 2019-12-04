@@ -4,7 +4,7 @@
     <img alt="Vue logo" src="../assets/logo.png" />
     <p class="text-white">{{msg}}</p>
     <input v-focus class="form-control mt-3 w-50 mx-auto" v-for="anyThing in 3" :key="anyThing.id" type="text">
-
+  <p> {{ count }} </p>
     <!-- <HeaderComponent></HeaderComponent> -->
     <!-- <HeaderComponent /> -->
     <!-- <header-component></header-component> --> <!--recommended -->
@@ -16,11 +16,19 @@
 // نستخدم @ عشان لو غيرنا مكان الفايل منحتجش نغير الباث
 // import HeaderComponent from '@/components/HeaderComponent.vue';
 
+import { Observable } from "rxjs";
+
 export default {
   name: "home",
   data: function () {
     return {
     msg: 'i am message',
+    }
+  },
+  subscriptions() {
+    // use VueRx & rxjs 
+    return {
+      count: new Observable(console.log('obs'))
     }
   },
   components: {
