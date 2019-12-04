@@ -15,6 +15,8 @@
       @click="loadMore">load more</button>
     </div>
     <router-view />
+      <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"></v-parallax>
+
   </div>
 </template>
 
