@@ -1,5 +1,5 @@
 <template>
-    <div>
-        user home page
-    </div>
+  <div>
+    user home page
+  </div>
 </template>

@@ -15,6 +15,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./scss/style.scss";
 import "./filters.js"; // global filter
 import "./directives"; //global custom directive
+import vuetify from "./plugins/vuetify";
 
 Vue.component("header-component", Header);
 
@@ -34,6 +35,7 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
+  vuetify,
   render: h => h(App)
 }).$mount("#app");
 

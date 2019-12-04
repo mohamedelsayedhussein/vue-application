@@ -1,4 +1,4 @@
-<template lang='pug'>
+<template lang="pug">
   .container
     h1 test
     a(href="#") link
@@ -7,11 +7,7 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-
-</style>
+<style></style>

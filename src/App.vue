@@ -30,7 +30,6 @@
 import Profile from "./components/AppProfile.vue";
 import { mapGetters} from "vuex";
 import axios from "axios";
-
 export default {
   name: "root-component",
   data: function() {

@@ -85,3 +85,4 @@ export default new Vuex.Store({
 // make sense | منطقى
 // manipulate | تلاعب
 // dummy | نموذج مزيف
+// prototype | النموذج المبدئي

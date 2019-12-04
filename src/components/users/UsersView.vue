@@ -1,11 +1,9 @@
 <template>
-    <div>
-        user {{ myUser }}
-    </div>
+  <div>user {{ myUser }}</div>
 </template>
 
 <script>
 export default {
-    props: ['myUser']
-}
+  props: ["myUser"]
+};
 </script>
