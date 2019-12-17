@@ -39,4 +39,4 @@ new Vue({
   render: h => h(App)
 }).$mount("#app");
 
-//  here you can import globally staff
+//  here you can import globally stuff
